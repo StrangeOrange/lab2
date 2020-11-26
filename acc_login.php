@@ -28,6 +28,15 @@ require_once 'db.php';
     </div>
 </header>
 <main>
+<div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="logo">
+              <a href="acc.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a>
+            </div>
+          </div>
+        </div>
+</div>   
 <?php $q= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e'");
 $row=mysqli_fetch_array($q);?>
 <div class="container">

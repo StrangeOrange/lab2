@@ -17,7 +17,7 @@
 <main>
     <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <div class="logo">
               <a href="index.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a>
             </div>
