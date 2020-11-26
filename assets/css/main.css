@@ -1,0 +1,60 @@
+html { height: 100%; }
+body {
+  min-height:100%; 
+  position:relative; 
+  padding-bottom: 70px; 
+}
+footer { 
+  position: absolute; 
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  height: 50px;
+  background-color: black; 
+  color: white;
+  justify-content: center;
+}
+.footer_text{
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 20px;
+}
+header{
+    background-color:black;
+
+}
+.header_text{
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.logo img{
+    width: 50%;
+}
+.reg_form{
+    padding: 15px;
+}
+.reg{
+  display: flex;
+  flex-direction: column;
+ align-items: flex-end;
+ padding: 20px;
+}
+.reg a{
+  text-decoration: none;
+  color: black;
+}
+.form_wrapper{
+  padding: 15px;
+}
+.foto_wrapper img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+padding: 20px;
+width: 300px;
+}
