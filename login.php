@@ -10,8 +10,14 @@ $p=$_POST['Password'];
         if (is_array($row)){
             $_SESSION['role_id'] = $row['role_id'];
             $_SESSION['email'] = $row['email'];
-            header('Location: acc.php');
-} else {
+            if($_SESSION['role_id'] == 1){
+                header('Location: acc_admin.php');
+            }
+            else{
+                header('Location: acc.php');
+            }
+} 
+else {
     header('Location: error_login.php');
    }
 }

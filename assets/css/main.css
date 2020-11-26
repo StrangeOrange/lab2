@@ -33,7 +33,7 @@ header{
   align-items: center;
 }
 .logo img{
-    width: 300px;
+    width: 200px;
 }
 .reg_form{
     padding: 15px;
@@ -57,4 +57,7 @@ header{
   align-items: center;
 padding: 20px;
 width: 300px;
+}
+.add_button{
+  float: right;
 }

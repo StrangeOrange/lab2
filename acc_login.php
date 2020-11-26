@@ -70,7 +70,7 @@ $row=mysqli_fetch_array($q);?>
                 </div>
                 <div class="form-group">
                     <label for="role">Роль</label>
-                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>">
+                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>" disabled>
                 </div>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>
