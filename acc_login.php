@@ -44,7 +44,7 @@ $row=mysqli_fetch_array($q);?>
         <div class="foto_wrapper">
         <div class="col-6">
         <?php foreach ($q as $row){ ?>
-            <img src="<?php echo $row['photo'] ; ?>" alt="photo">
+            <img src="<?php echo $row['photo'] ; ?>" alt="Ваш Аватр">
             <?php } ?>
         <form enctype="multipart/form-data" method="post" action="edit.php">
             <p><input type="file" name="image" multiple accept="image/*,image/jpeg">
@@ -75,6 +75,11 @@ $row=mysqli_fetch_array($q);?>
                 </div>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>
+            </form>
+            <form method="post" action="delete.php" class="delete">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" value="Регистрация">Удалить</button>
+                    </div>
             </form>
             </div> 
         </div>
