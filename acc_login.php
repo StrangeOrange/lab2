@@ -46,11 +46,12 @@ $row=mysqli_fetch_array($q);?>
         <?php foreach ($q as $row){ ?>
             <img src="<?php echo $row['photo'] ; ?>" alt="photo">
             <?php } ?>
+        <form enctype="multipart/form-data" method="post" action="edit.php">
+            <p><input type="file" name="image" multiple accept="image/*,image/jpeg">
         </div>
         </div>
         <div class="col-6">
         <div class="form_wrapper">
-            <form action="edit.php" method="post">
             <?php foreach ($q as $row){ ?>
                 <div class="form-group">
                     <label for="first_name">Имя</label>

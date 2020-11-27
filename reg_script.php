@@ -9,12 +9,6 @@ $sql = "INSERT INTO users (first_name, last_name, email,password,role_id) VALUES
 if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
       header('Location: index.php');
-} else {
-      echo $f;
-      echo $last;
-      echo $e;
-      echo $p;
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+} 
 mysqli_close($conn);
 ?>
