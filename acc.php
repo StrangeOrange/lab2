@@ -2,6 +2,9 @@
 session_start();
 require_once 'db.php';
 $e=$_SESSION['email'];
+if(!isset($_SESSION['email'])) { 
+  header('Location: index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +16,6 @@ $e=$_SESSION['email'];
   <link rel="stylesheet" href="../lab2/assets/bootstrap-4.5.3-dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="../lab2/assets/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../lab2/assets/css/main.css">
-  <link rel="stylesheet" href="../lab2/assets/css/modal.css">
   <title>Главная страница</title>
 </head>
 
@@ -34,7 +36,6 @@ $row1=mysqli_fetch_array($q1);?>
 <?php foreach ($q1 as $row1){ ?>
                 <a href="acc_login.php" id="myBtn"><?php echo $row1['first_name']; ?></a>
                 <?php } ?>
-                <script src="../lab2/assets/js/modal.js"></script>
                 <a href="out.php">Sign out</a>
             </div>
           </div>

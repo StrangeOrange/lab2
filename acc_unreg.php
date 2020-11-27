@@ -32,7 +32,14 @@ $id=$_GET['id'];
         <div class="row">
           <div class="col-6">
             <div class="logo">
-              <a href="index.php">
+              <a href="<?php 
+              if(isset($_SESSION['email'])) { 
+                echo "acc.php";
+                }
+                else{
+                    echo "index.php";
+                }
+              ?>">
               <img src="../lab2/assets/img/logo.png" alt="Logo"> 
             </a>
             </div>

@@ -46,6 +46,7 @@
             <option value="1">Admin</option>
             <option value="2">User</option>
           </select>
+          <br>
           <div class="form-group">
             <label for="Password">Пароль</label>
             <input type="password" class="form-control" id="Password" name="Password" required>

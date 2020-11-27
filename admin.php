@@ -37,7 +37,7 @@ require_once 'db.php';
           </div>
         </div>
 </div>   
-<?php $q= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e' AND");
+<?php $q= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e'");
 $row=mysqli_fetch_array($q);?>
 <div class="container">
     <div class="row">
@@ -46,12 +46,18 @@ $row=mysqli_fetch_array($q);?>
         <?php foreach ($q as $row){ ?>
             <img src="<?php echo $row['photo'] ; ?>" alt="photo">
             <?php } ?>
+            
+            <form enctype="multipart/form-data" method="post" action="edit.php">
+            <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" name="image" multiple accept="image/*,image/jpeg">
+            <label class="custom-file-label" for="customFile">Выберете файл</label>
+        </div>
         </div>
         </div>
         <div class="col-6">
         <div class="form_wrapper">
-            <form action="edit.php" method="post">
             <?php foreach ($q as $row){ ?>
+                <form method="post" action="edit.php">
                 <div class="form-group">
                     <label for="first_name">Имя</label>
                     <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $row['first_name'] ; ?>">
@@ -68,10 +74,11 @@ $row=mysqli_fetch_array($q);?>
                     <label for="password">Пароль</label>
                     <input type="password" class="form-control" id="password" name="password" value="<?php echo $row['password'] ; ?>">
                 </div>
-                <div class="form-group">
-                    <label for="role">Роль</label>
-                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>" >
-                </div>
+                <select class="custom-select" name="role" required>
+                <?php echo ' <option value="'.$row['role_id'].'" selected>'.$row['title'].'</option>';?>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>
             </form>

@@ -65,3 +65,6 @@ width: 300px;
 .add_button{
   float: right;
 }
+.custom-select{
+margin-bottom: 15px;
+}
