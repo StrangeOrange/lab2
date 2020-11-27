@@ -48,7 +48,7 @@
                   </div>
                 </div>
                 <script src="../lab2/assets/js/modal.js"></script>
-                <a href="register.php">Sing up</a>
+                <a href="register.php">Sign up</a>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ $row=mysqli_fetch_array($q);?>
                       <tbody>
                         <tr>
                           <th scope="row">
-                            <?php echo $row['id'] ; ?>
+                          <a href="acc_unreg.php?id= <?php echo $row['id'] ; ?>">  <?php echo $row['id'] ; ?> </a>
                           </th>
                           <td>
                             <?php echo $row['first_name']; ?>

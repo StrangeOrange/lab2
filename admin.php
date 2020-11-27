@@ -13,7 +13,7 @@ require_once 'db.php';
     <link rel="stylesheet" href="../lab2/assets/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../lab2/assets/css/main.css">
     <link rel="stylesheet" href="../lab2/assets/css/modal.css">
-    <title>Личный кабинет</title>
+    <title>Кабинет администратора</title>
 </head>
 <body>
 <header class="header">
@@ -21,7 +21,7 @@ require_once 'db.php';
         <div class="row">
             <div class="col-12">
                     <div class="header_text">
-                    <h1>Личный кабинет</h1>
+                    <h1>Кабинет администратора</h1>
                     </div>
             </div>
         </div>
@@ -32,12 +32,12 @@ require_once 'db.php';
         <div class="row">
           <div class="col-6">
             <div class="logo">
-              <a href="acc.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a>
+              <a href="acc_admin.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a>
             </div>
           </div>
         </div>
 </div>   
-<?php $q= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e'");
+<?php $q= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e' AND");
 $row=mysqli_fetch_array($q);?>
 <div class="container">
     <div class="row">
@@ -70,7 +70,7 @@ $row=mysqli_fetch_array($q);?>
                 </div>
                 <div class="form-group">
                     <label for="role">Роль</label>
-                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>" disabled>
+                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>" >
                 </div>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>

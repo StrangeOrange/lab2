@@ -2,6 +2,7 @@
 session_start();
 require_once 'db.php';
 $e=$_SESSION['email'];
+$l=$_SESSION['role_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +26,14 @@ $e=$_SESSION['email'];
           <div class="row">
             <div class="col-6">
               <div class="logo">
-              <a href="index.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a> 
+              <a href="acc_admin.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a> 
               </div>
             </div>
             <div class="col-6 reg">
             <?php $q1= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e'");
 $row1=mysqli_fetch_array($q1);?>
 <?php foreach ($q1 as $row1){ ?>
-                <a href="acc_login.php" id="myBtn"><?php echo $row1['first_name']; ?></a>
+                <a href="admin.php" id="myBtn"><?php echo $row1['first_name']; ?></a>
                 <?php } ?>
                 <script src="../lab2/assets/js/modal.js"></script>
                 <a href="out.php">Sign out</a>
@@ -58,7 +59,14 @@ $row=mysqli_fetch_array($q);?>
                       <tbody>
                         <tr>
                           <th scope="row">
-                            <?php echo $row['id'] ; ?>
+                          <a href="<?php
+              if($l == 1){
+                 echo "acc_log.php";
+              }
+              else{
+                echo "acc_unreg.php";
+              } 
+              ?>?id= <?php echo $row['id'] ; ?>">  <?php echo $row['id'] ; ?> </a>
                           </th>
                           <td>
                             <?php echo $row['first_name']; ?>

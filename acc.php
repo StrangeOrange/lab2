@@ -25,7 +25,7 @@ $e=$_SESSION['email'];
           <div class="row">
             <div class="col-6">
               <div class="logo">
-              <a href="index.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a> 
+              <a href="acc.php"><img src="../lab2/assets/img/logo.png" alt="Logo"> </a> 
               </div>
             </div>
             <div class="col-6 reg">
@@ -58,7 +58,7 @@ $row=mysqli_fetch_array($q);?>
                       <tbody>
                         <tr>
                           <th scope="row">
-                            <?php echo $row['id'] ; ?>
+                          <a href="acc_unreg.php?id= <?php echo $row['id'] ; ?>">  <?php echo $row['id'] ; ?> </a>
                           </th>
                           <td>
                             <?php echo $row['first_name']; ?>
