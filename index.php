@@ -30,7 +30,9 @@
                   <div class="modal-content">
                     <span class="close">&times;</span>
                     <div class="modal-body">
-                      
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-12">
                       <form action="login.php" method="post">
                       <div class="form-group">
             <label for="Email">Електроная почта</label>
@@ -43,7 +45,9 @@
           </div>
                         <button type="submit" class="btn btn-primary">Войти</button>
                       </form>
-                      
+                      </div>
+                      </div>
+                      </div>
                     </div>
                   </div>
                 </div>
