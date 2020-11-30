@@ -48,9 +48,8 @@ $row=mysqli_fetch_array($q);?>
             <?php } ?>
             
             <form enctype="multipart/form-data" method="post" action="edit.php">
-            <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile" name="image" multiple accept="image/*,image/jpeg">
-            <label class="custom-file-label" for="customFile">Выберете файл</label>
+            <div class="">
+            <input type="file" class="" id="customFile" name="image" multiple accept="image/*,image/jpeg">
         </div>
         </div>
         </div>

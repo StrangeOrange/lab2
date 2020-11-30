@@ -76,6 +76,11 @@ $row=mysqli_fetch_array($q);?>
                 </div>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>
+                <form method="post" action="delete.php" class="delete">
+                    <div class="form-group delete">
+                        <button type="submit" class="btn btn-primary" value="Регистрация">Удалить</button>
+                    </div>
+                </form>
             </form>
             </div> 
         </div>
