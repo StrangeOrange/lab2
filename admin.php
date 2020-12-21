@@ -1,5 +1,8 @@
 <?php 
 session_start();
+error_reporting(0);
+$id=$_GET['id'];
+$_SESSION['ind']=$id;
 $e=$_SESSION['email'];
 require_once 'db.php';
 ?>

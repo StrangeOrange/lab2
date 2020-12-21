@@ -2,6 +2,7 @@
 session_start();
 require_once 'db.php';
 $id=$_GET['id'];
+$_SESSION['ind']=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,14 +47,19 @@ $row=mysqli_fetch_array($q);?>
         <div class="foto_wrapper">
         <div class="col-6">
         <?php foreach ($q as $row){ ?>
-            <img src="<?php echo $row['photo'] ; ?>" alt="photo">
+            <img src="<?php echo $row['photo'] ; ?>" alt="Ваш Аватр">
             <?php } ?>
+            
+            <form enctype="multipart/form-data" method="post" action="edit.php">
+            <div class="">
+            <input type="file" class="" id="customFile" name="image" multiple accept="image/*,image/jpeg">
+        </div>
         </div>
         </div>
         <div class="col-6">
         <div class="form_wrapper">
-            <form action="edit.php" method="post">
             <?php foreach ($q as $row){ ?>
+                <form method="post" action="edit.php">
                 <div class="form-group">
                     <label for="first_name">Имя</label>
                     <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $row['first_name'] ; ?>">
@@ -70,18 +76,19 @@ $row=mysqli_fetch_array($q);?>
                     <label for="password">Пароль</label>
                     <input type="password" class="form-control" id="password" name="password" value="<?php echo $row['password'] ; ?>">
                 </div>
-                <div class="form-group">
-                    <label for="role">Роль</label>
-                    <input type="text" class="form-control" id="role" name="role" value="<?php echo $row['title'] ; ?>" >
-                </div>
+                <select class="custom-select" name="role" required>
+                <?php echo ' <option value="'.$row['role_id'].'" selected>'.$row['title'].'</option>';?>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
                 <?php } ?>
                 <button type="submit" class="btn btn-primary" value="Регистрация">Внести изменения</button>
+            </form>
                 <form method="post" action="delete.php" class="delete">
-                    <div class="form-group delete">
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary" value="Регистрация">Удалить</button>
                     </div>
                 </form>
-            </form>
             </div> 
         </div>
     </div>

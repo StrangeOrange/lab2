@@ -33,7 +33,7 @@ $l=$_SESSION['role_id'];
             <?php $q1= mysqli_query($conn, "SELECT * FROM users, roles WHERE users.role_id = roles.id_r AND users.email = '$e'");
 $row1=mysqli_fetch_array($q1);?>
 <?php foreach ($q1 as $row1){ ?>
-                <a href="admin.php" id="myBtn"><?php echo $row1['first_name']; ?></a>
+                <a href="admin.php?id= <?php echo $row1['id'] ; ?>" id="myBtn"><?php echo $row1['first_name']; ?></a>
                 <?php } ?>
                 <script src="../lab2/assets/js/modal.js"></script>
                 <a href="out.php">Sign out</a>
